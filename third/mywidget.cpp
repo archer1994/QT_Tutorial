@@ -7,6 +7,7 @@
 MyWidget::MyWidget(QWidget *parent) :
     QWidget(parent)
 {
+	image=NULL;
 }
 MyWidget::~MyWidget()
 {
@@ -20,7 +21,7 @@ void MyWidget::paintEvent(QPaintEvent *event)
         //初始化image
         image=new QImage(this->width(),this->height(),QImage::Format_ARGB32);
         QPainter p(image);
-        p.fillRect(0,0,image->width(),image->height(),QBrush(QColor(255,255,255)));
+        p.fillRect(0,0,image->width(),image->height(),QBrush(QColor(0,0,0)));
     }
     QPainter painter(this);
     painter.drawImage(0,0,*image);
